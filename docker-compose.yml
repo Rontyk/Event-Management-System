@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   db:
-    container_name: concertApi-postgres
+    container_name: concertApi-postgreSQL
     image: postgres
     restart: always
     environment:
