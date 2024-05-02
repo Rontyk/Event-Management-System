@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input[type="number"], input[type="text"], input[type="password"], select {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <div>
+        <form th:action="@{|/registrations/${id}|}" th:method="put">
+            <p>If you want to change how many your tickets</p>
+            <input type="hidden" name="eventId" th:value="${eventId}" />
+            <input type="hidden" name="registrationId" th:value="${registrationId}">
+            <div>
+                <label for="seats">Tickets Number:</label>
+                <input type="number" id="seats" name="seats" required>
+            </div>
+            <div>
+                <button type="submit">Complete Changing</button>
+            </div>
+        </form>
+
+        <div>
+            <form th:method="delete" th:action="@{|/registrations/${registrationId}|}">
+                <button type="submit" value="Delete">Delete this registration</button>
+            </form>
+        </div>
+        <div>
+            <a th:href="@{|/user/profile|}">View profile</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
