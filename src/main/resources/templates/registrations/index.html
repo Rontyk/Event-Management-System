@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register for Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input[type="number"], input[type="text"], input[type="password"], select {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Register for Event</h1>
+<form th:action="@{/registrations}" method="post">
+    <input type="hidden" name="eventId" th:value="${param.eventId}" />
+    <div>
+        <label for="seats">Tickets Number:</label>
+        <input type="number" id="seats" name="seats" required>
+    </div>
+    <div>
+        <button type="submit">Complete Registration</button>
+    </div>
+    <div>
+        <a th:href="@{|/user/profile|}">View profile</a>
+    </div>
+</form>
+
+
+</body>
+</html>

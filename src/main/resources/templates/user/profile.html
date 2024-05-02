@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input[type="number"], input[type="text"], input[type="password"], select {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+<h1>User Profile</h1>
+<div>
+    <h2>Name: <span th:text="${user.username}">User Name</span></h2>
+    <h3>Registered Events:</h3>
+    <ul>
+        <li th:each="registration : ${registrations}">
+            <p>Event: <span th:text="${registration.getEvent().getTitle()}">Event Title</span></p>
+            <p>Seats Booked: <span th:text="${registration.getSeats()}">Number of Seats</span></p>
+            <a th:href="@{|/registrations/${registration.getRegistrationId()}|}">change registration</a>
+        </li>
+    </ul>
+    <div>
+        <a th:href="@{|/events|}">See all events</a>
+        <a th:href="@{|/logout|}">Logout</a>
+    </div>
+</div>
+
+
+</body>
+</html>

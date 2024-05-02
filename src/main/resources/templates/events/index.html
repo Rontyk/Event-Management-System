@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Events</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        .event-container {
+            background: white;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p, a {
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+
+</head>
+<body>
+<h1>All Events</h1>
+<div th:each="event : ${events}">
+    <div class="event-container">
+        <h2 th:text="${event.title}">Event Title</h2>
+        <p th:text="${'Date: ' + event.eventDate}">Event Date</p>
+        <a th:href="@{|/events/${event.eventId}|}">View Details</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        .event-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1, p {
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="event-container">
+    <h1 th:text="${event.title}">Event Title</h1>
+    <p th:text="${event.description}">Event Description</p>
+    <p th:text="${event.eventDate}">Event Date</p>
+    <p th:text="${event.location}">Event Location</p>
+    <p th:text="${event.availableSeats} + ' seats available'">Available Seats</p>
+</div>
+
+<a th:href="@{|/logout|}">Logout</a>
+
+<a th:href="@{|/registrations/new?eventId=${event.eventId}|}" class="btn">Register for This Event</a>
+
+<div>
+    <a th:href="@{|/user/profile|}">View profile</a>
+</div>
+
+</body>
+</html>
