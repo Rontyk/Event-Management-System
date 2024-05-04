@@ -36,7 +36,7 @@
   ('Concert A', 'A great music concert', '2023-12-15 19:00:00', 'Concert Hall A', 150),
   ('Theatre B', 'An engaging play', '2023-12-20 18:00:00', 'Theatre Venue B', 75),
   ('Concert C', 'A rock music festival', '2023-12-25 20:00:00', 'Outdoor Venue C', 200);
-  
+  ```
   4. ### Запуск приложения:
     Перейдите по ссылке http://localhost:8080/concert/ после запуска приложения.
   5. ### Регистрация пользователя:
