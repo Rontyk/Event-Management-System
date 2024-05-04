@@ -30,7 +30,8 @@
        FOREIGN KEY (event_id) REFERENCES Events(event_id)
    );
 
-  3. ### Начальное заполнение таблицы Events: 
+  3. ### (Если вы сделали 2 пункт) Начальное заполнение таблицы Events:
+   ```sql
   INSERT INTO Events (title, description, event_date, location, available_seats) VALUES
   ('Concert A', 'A great music concert', '2023-12-15 19:00:00', 'Concert Hall A', 150),
   ('Theatre B', 'An engaging play', '2023-12-20 18:00:00', 'Theatre Venue B', 75),
